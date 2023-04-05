@@ -4,6 +4,9 @@ import "../sass/site.scss"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
+// the styles for these sections are in the page.scss
+// p.s. feel free to change the class and variable names since these are temporary
+
 const IndexPage = () => {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
