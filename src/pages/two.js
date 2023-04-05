@@ -3,6 +3,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ScrollWrapper from "../components/scroll"
+import "../sass/site.scss"
 
 const SecondPage = () => (
   <Layout>
