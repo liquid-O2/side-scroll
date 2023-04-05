@@ -1,11 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useLayoutEffect } from "react"
 import Seo from "../components/seo"
 import "../sass/site.scss"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const IndexPage = () => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     const pageWrapper = document.querySelector(".page-wrapper")
     let gsapContext = gsap.context(() => {
@@ -31,7 +31,7 @@ const IndexPage = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".third-section",
-            start: "20% bottom",
+            start: "30% bottom",
             end: "bottom bottom",
             scrub: 1,
           },
@@ -47,7 +47,7 @@ const IndexPage = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".fourth-section",
-            start: "20% bottom",
+            start: "30% bottom",
             end: "bottom bottom",
             scrub: 1,
           },
