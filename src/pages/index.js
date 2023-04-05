@@ -47,7 +47,7 @@ const IndexPage = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".fourth-section",
-            start: "30% bottom",
+            start: "40% bottom",
             end: "bottom bottom",
             scrub: 1,
           },
