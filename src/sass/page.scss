@@ -5,6 +5,9 @@
   height: 100vh;
   background-color: whitesmoke;
   z-index: 1;
+  @media (max-width: 918px) {
+    position: relative;
+  }
 }
 
 .scroll-image {
@@ -17,6 +20,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 2;
+  @media (max-width: 918px) {
+    position: relative;
+    width: 100vw;
+  }
 }
 
 .pink-div {
@@ -27,6 +34,10 @@
   height: 100vh;
   background-color: #e2cec6;
   z-index: 2;
+  @media (max-width: 918px) {
+    position: relative;
+    width: 100vw;
+  }
 }
 
 .form-panel {
@@ -37,13 +48,22 @@
   width: 100vw;
   height: 100vh;
   z-index: 3;
+  @media (max-width: 918px) {
+    position: relative;
+  }
 }
 
-.fourth-section,.fifth-section {
+.fifth-section {
   height: 200vh;
+  @media (max-width: 918px) {
+    height: 100vh;
+  }
 }
-.fourth-section{
+.fourth-section {
   height: 300vh;
+  @media (max-width: 918px) {
+    height: 100vh;
+  }
 }
 
 .last-panel {
@@ -59,6 +79,9 @@
   min-width: 100vw;
   width: 100vw;
   height: 100vh;
+  @media (max-width: 918px) {
+    position: relative;
+  }
 }
 
 main {
@@ -77,6 +100,10 @@ main {
   position: fixed;
   inset: 0;
   z-index: -1;
+  @media (max-width: 918px) {
+    position: absolute;
+    min-height: 200vh;
+  }
 }
 
 section {
@@ -84,8 +111,12 @@ section {
   width: 100%;
   // border: 1px solid red;
   margin-bottom: 160px;
+  @media (max-width: 918px) {
+    margin-bottom: 0px;
+  }
 }
 
-.third-section{
+.third-section {
   height: 200vh;
 }
+

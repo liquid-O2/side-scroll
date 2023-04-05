@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react"
+import React, { useEffect } from "react"
 import Seo from "../components/seo"
 import "../sass/site.scss"
 import { gsap } from "gsap"
@@ -8,68 +8,76 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 // p.s. feel free to change the class and variable names since these are temporary
 
 const IndexPage = () => {
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
-    const pageWrapper = document.querySelector(".page-wrapper")
-    let gsapContext = gsap.context(() => {
-      const timelineOne = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".second-section",
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: 1,
-          },
-        })
-        .fromTo(
-          ".coming-soon-message",
-          {
-            xPercent: -100,
-            yPercent: 100,
-          },
-          { xPercent: 0, yPercent: 0 }
-        )
+    let gsapContext
 
-      const timelineTwo = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".third-section",
-            start: "30% bottom",
-            end: "bottom bottom",
-            scrub: 1,
-          },
-        })
-        .fromTo(".scroll-image", { xPercent: -100 }, { xPercent: 0 })
-        .fromTo(
-          ".pink-div",
-          { xPercent: 100, yPercent: 50 },
-          { xPercent: 0, yPercent: 0 }
-        )
+    const pageWrapper = document.querySelector(".page-wrapper")
+    gsapContext = gsap.context(() => {
+      // -- Only run animations on the specified breakpoint
+      const mm = gsap.matchMedia()
+      mm.add("(min-width: 918px)", () => {
+        const timelineOne = gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".second-section",
+              start: "top bottom",
+              end: "bottom bottom",
+              scrub: 1,
+            },
+          })
+          .fromTo(
+            ".coming-soon-message",
+            {
+              xPercent: -100,
+              yPercent: 100,
+            },
+            { xPercent: 0, yPercent: 0 }
+          )
+        const timelineTwo = gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".third-section",
+              start: "30% bottom",
+              end: "bottom bottom",
+              scrub: 1,
+            },
+          })
+          .fromTo(".scroll-image", { xPercent: -100 }, { xPercent: 0 })
+          .fromTo(
+            ".pink-div",
+            { xPercent: 100, yPercent: 50 },
+            { xPercent: 0, yPercent: 0 }
+          )
 
         const timelineThree = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".fourth-section",
-            start: "40% bottom",
-            end: "bottom bottom",
-            scrub: 1,
-          },
-        })
-        .fromTo(".form-panel", { xPercent: 100 }, { xPercent: 0 })
+          .timeline({
+            scrollTrigger: {
+              trigger: ".fourth-section",
+              start: "40% bottom",
+              end: "bottom bottom",
+              scrub: 1,
+            },
+          })
+          .fromTo(".form-panel", { xPercent: 100 }, { xPercent: 0 })
 
         const timelineFour = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".fifth-section",
-            start: "30% bottom",
-            end: "bottom bottom",
-            scrub: 1,
-          },
-        })
-        .fromTo(".last-panel", { yPercent: 100 }, { yPercent: 0 })
+          .timeline({
+            scrollTrigger: {
+              trigger: ".fifth-section",
+              start: "30% bottom",
+              end: "bottom bottom",
+              scrub: 1,
+            },
+          })
+          .fromTo(".last-panel", { yPercent: 100 }, { yPercent: 0 })
+      })
+      window.addEventListener("resize", () => gsap.matchMediaRefresh())
     }, pageWrapper)
 
-    return () => gsapContext.revert()
+    return () => {
+      gsapContext.revert()
+    }
   }, [])
 
   return (
