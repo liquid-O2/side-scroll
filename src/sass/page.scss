@@ -18,6 +18,7 @@
   background-repeat: no-repeat;
   z-index: 2;
 }
+
 .pink-div {
   position: fixed;
   top: 0;
@@ -26,4 +27,14 @@
   height: 100vh;
   background-color: #e2cec6;
   z-index: 2;
+}
+
+.form-panel{
+  background-color: whitesmoke;
+  position: fixed;
+  top:0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
 }

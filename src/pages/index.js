@@ -31,7 +31,7 @@ const IndexPage = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".third-section",
-            start: "top bottom",
+            start: "20% bottom",
             end: "bottom bottom",
             scrub: 1,
           },
@@ -42,6 +42,17 @@ const IndexPage = () => {
           { xPercent: 100, yPercent: 50 },
           { xPercent: 0, yPercent: 0 }
         )
+
+        const timelineThree = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".fourth-section",
+            start: "20% bottom",
+            end: "bottom bottom",
+            scrub: 1,
+          },
+        })
+        .fromTo(".form-panel", { xPercent: 100 }, { xPercent: 0 })
     }, pageWrapper)
 
     return () => gsapContext.revert()
@@ -57,6 +68,9 @@ const IndexPage = () => {
       <section className="third-section">
         <div className="scroll-image" />
         <div className="pink-div" />
+      </section>
+      <section className="fourth-section">
+        <div className="form-panel" />
       </section>
     </div>
   )
