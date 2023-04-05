@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 const ScrollWrapper = ({ children }) => {
   gsap.registerPlugin(ScrollTrigger)
   useEffect(() => {

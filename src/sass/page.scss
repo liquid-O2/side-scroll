@@ -1,0 +1,29 @@
+.coming-soon-message {
+  position: fixed;
+  inset: 0;
+  width: 70vw;
+  height: 100vh;
+  background-color: whitesmoke;
+  z-index: 1;
+}
+
+.scroll-image {
+  position: fixed;
+  inset: 0;
+  width: 30vw;
+  height: 100vh;
+  background-image: url("../images/slideImage.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+.pink-div {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70vw;
+  height: 100vh;
+  background-color: #e2cec6;
+  z-index: 2;
+}
