@@ -11,6 +11,7 @@ const IndexPage = () => (
       <div className="scroll-item one"> Scroll Item One</div>
       <div className="scroll-item two">Scroll Item Two</div>
       <div className="scroll-item three">Scroll Item Three</div>
+      <div className="scroll-item one"> Scroll Item One</div>
     </ScrollWrapper>
     <section className="section-block two">Last Section</section>
   </Layout>

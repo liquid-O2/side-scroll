@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
 const ScrollWrapper = ({ children }) => {
   gsap.registerPlugin(ScrollTrigger)
   useEffect(() => {
@@ -22,7 +21,20 @@ const ScrollWrapper = ({ children }) => {
         })
     }, wrapper)
 
-    return () => gsapContext.revert()
+    function adjustSectionHeight() {
+      const sectionHeights = document.querySelectorAll(".section-height")
+      sectionHeights.forEach(function (element, index) {
+        let trackWidth = element.querySelector(".track").offsetWidth
+        element.style.height = trackWidth + "px"
+      })
+    }
+    adjustSectionHeight()
+    window.addEventListener("resize", () => adjustSectionHeight())
+
+    return () => {
+      gsapContext.revert()
+      window.removeEventListener("resize", () => adjustSectionHeight())
+    }
   }, [])
   return (
     <div className="section-wrapper">
