@@ -37,7 +37,11 @@ const IndexPage = () => {
           },
         })
         .fromTo(".scroll-image", { xPercent: -100 }, { xPercent: 0 })
-        .fromTo(".pink-div", { xPercent: 100 }, { xPercent: 0 })
+        .fromTo(
+          ".pink-div",
+          { xPercent: 100, yPercent: 50 },
+          { xPercent: 0, yPercent: 0 }
+        )
     }, pageWrapper)
 
     return () => gsapContext.revert()
