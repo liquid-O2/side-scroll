@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.section-block {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  &.one {
+    background-color: aliceblue;
+    color: black;
+  }
+}
+
+.scroll-item {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  flex: 0;
+  &.one {
+    min-width: 100vw;
+    background-color: bisque;
+  }
+  &.two {
+    min-width: 100vw;
+    background-color: rgb(175, 115, 41);
+  }
+  &.three {
+    min-width: 100vw;
+    background-color: rgb(196, 248, 255);
+  }
+}
